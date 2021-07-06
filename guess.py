@@ -25,7 +25,7 @@ class guess_number:
                     raise ValueError("Please guess a number within the given range")
                 # if condition is met then user wins and loop breaks
                 if guess == num:
-                    print("Congratulations! You won")
+                    print("Congratulations! You won in", count,"guesses")
                     playAgain = input("Would you like to play again? (Enter Yes/No) ")
                     count = 0
                     num = int(random.randint(lb, ub))
