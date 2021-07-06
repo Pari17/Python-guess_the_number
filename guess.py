@@ -1,6 +1,5 @@
 import random
 import math
-from typing import Counter
 
 class guess_number:
     
