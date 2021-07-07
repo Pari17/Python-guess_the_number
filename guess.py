@@ -11,7 +11,7 @@ class guess_number:
         ub = int(input("Enter upper bound:"))
         # generate random number between range
         num = random.randint(lb, ub)
-        print("\n\t You have", round(math.log(ub - lb + 1, 2)),"chances to guess the integer!\n")
+        print(" You have", round(math.log(ub - lb + 1, 2)),"chances to guess the integer!")
         # create counter for number of guesses
         count = 0
         
@@ -20,16 +20,16 @@ class guess_number:
             count += 1
             try:
                  # user input guessed number
-                guess = int(input("Guess a number (Integers only): "))
+                guess = int(input("Guess the number (Integers only): "))
                 if int(guess) < lb or int(guess) > ub:
-                    raise ValueError("Please guess a number within the given range")
+                    raise ValueError("Guessed number is out of range. Please try again.")
                 # if condition is met then user wins and loop breaks
                 if guess == num:
                     print("Congratulations! You won in", count,"guesses")
-                    playAgain = input("Would you like to play again? (Enter Yes/No) ")
+                    play_again = input("Would you like to replay? (yes/no)")
                     count = 0
                     num = int(random.randint(lb, ub))
-                    if playAgain.lower() == "no":
+                    if play_again.lower() == "no":
                         print("Exiting...")
                         break
                 # if incorrect guess then loop continuous
@@ -43,7 +43,7 @@ class guess_number:
         
         # if user runs out of guesses the following is displayed
         if count >= math.log(ub - lb + 1, 2):
-            print("\n The number is %d" % num)
+            print("The number is", num)
             print("\t Game Over!")
             
     
